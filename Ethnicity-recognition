@@ -1,0 +1,28 @@
+## Race\ Ethnicity Identification using DeepFace package provided by OpenCv
+
+## This code is meant to analyse input image in order to identify the dominant ethinicity of the subject. This it can be one of the followings: asian, indian, black, white, middle eastern, latino hispanic.
+
+# For this it was used DeepFace library
+
+#-------------------------------
+
+# 1st Step: import packages
+from deepface import DeepFace
+import cv2
+import matplotlib.pyplot as plt
+
+# 2nd Step: load an image and display it
+img1 = cv2.imread(r'C:\Users\Admin\OneDrive - \Desktop\img01.jpg')
+plt.imshow(img01[:,:,::-1])
+plt.show()
+
+# 3rd Step: proceed to image analyse
+result = DeepFace.analyze(img01, actions = ['race'])
+
+# 4th Step: print the result analysis
+print(result)
+
+# 5th Step: extract the dominant race from the result
+ethnicity = result["dominant_race"]
+ethnicity
+
